@@ -22,7 +22,12 @@ export namespace Gyazo {
         app: string;
         title: string;
     }
-
+    interface Thumbnails {
+        large_url :string;
+        medium_url: string;
+        mobile_2x_url: string;
+        small_url: string;
+    }
     // certain properties are missing because they are not sent and/or relevant
     interface PreloadData {
         access_policy: string | "anyone";
@@ -34,6 +39,7 @@ export namespace Gyazo {
         explicit: boolean;
         external_comments : string[];
         file_size: number;
+        grid_thumbs: Thumbnails;
         has_mp4: boolean;
         image_id: string;
         is_preview_gif: false;
