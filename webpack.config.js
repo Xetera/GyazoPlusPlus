@@ -3,10 +3,9 @@ const path = require('path');
 
 module.exports = {
     entry: {
-        alias: path.join(__dirname, 'src/alias.ts'),
         dispatcher: path.join(__dirname, 'src/dispatcher.ts'),
         captures: path.join(__dirname, 'src/captures.ts'),
-        preload: path.join(__dirname, 'src/preload.ts'),
+        eventListeners: path.join(__dirname, 'src/eventListeners.ts'),
         database : path.join(__dirname, 'src/database.ts')
     },
     output: {
