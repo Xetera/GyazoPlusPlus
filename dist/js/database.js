@@ -73,7 +73,9 @@ Object.defineProperty(exports, "__esModule", { value: true });
 function checkDuplicate(alias) {
     return new Promise(function (resolve, reject) {
         chrome.storage.local.get(alias, function (items) {
-            Boolean(items) ? reject('duplicate picture') : resolve();
+            console.log('checking dupe');
+            console.log(Object.keys(items).length ? 'dupe' : 'not dupe');
+            Object.keys(items).length ? reject('duplicate picture') : resolve();
         });
     });
 }
@@ -81,6 +83,8 @@ exports.checkDuplicate = checkDuplicate;
 function getAllPictures() {
     return new Promise(function (resolve) {
         chrome.storage.local.get(null, function (items) {
+            console.log('Got all items from storage!');
+            console.log(items);
             resolve(items);
         });
     });
