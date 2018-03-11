@@ -15,7 +15,7 @@
   },
   "content_scripts": [{
     "matches": ["https://gyazo.com/*"],
-    "js":      ["js/preload.js", "js/captures.js"]
+    "js":      ["js/eventListeners.js", "js/captures.js"]
   }],
   "browser_action": {
     "default_popup": "popup.html"
