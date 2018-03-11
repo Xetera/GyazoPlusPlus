@@ -120,11 +120,7 @@ function setScreenshot(data) {
     });
 }
 function fetchCurrent(tab) {
-    if (!tab.url)
-        return;
-    if (tab.status !== tabStatus.COMPLETE)
-        return;
-    if (!tab.id)
+    if (!tab.url || tab.status !== tabStatus.COMPLETE || !tab.id)
         return;
     if (tab.url === 'https://gyazo.com/captures') {
         chrome.tabs.sendMessage(tab.id, { text: 'capture' });

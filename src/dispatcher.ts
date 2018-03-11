@@ -22,10 +22,8 @@ function setScreenshot(data : PreloadData){
 }
 
 function fetchCurrent(tab : Tab){
+    if (!tab.url || tab.status !== tabStatus.COMPLETE || !tab.id) return;
 
-    if (!tab.url) return;
-    if (tab.status !== tabStatus.COMPLETE) return;
-    if (!tab.id) return;
     if (tab.url === 'https://gyazo.com/captures'){
         chrome.tabs.sendMessage(tab.id, {text: 'capture'});
     }
@@ -39,8 +37,6 @@ function fetchCurrent(tab : Tab){
             setScreenshot(data);
         });
     }
-
-
 }
 
 chrome.tabs.onCreated.addListener((tab : Tab)=> {
