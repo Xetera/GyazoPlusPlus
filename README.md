@@ -48,7 +48,7 @@ The medium thumbnail that we get in the server response isn't used for anything 
 
 ## Fixes?
 
-Although this sort of workaround is always going to be available as long as pictures are still available there are ways to make it a lot harder. 
+Although this sort of workaround is always going to be around as long as pictures are available through links forever, there are ways to make it a lot harder. 
 
 Don't reflect data the user doesn't need. The thumbnail along with all the other data that's saved as a DOM element don't get used for anything the user can see, 
 
